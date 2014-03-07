@@ -55,9 +55,7 @@ module JSON
             end
           end
         end
-        bytes.pack('C*').force_encoding(Encoding::UTF_8).tap do |str|
-          error('Invalid UTF-8 byte sequence') unless str.valid_encoding?
-        end
+        bytes.pack('C*')
       end
 
       private

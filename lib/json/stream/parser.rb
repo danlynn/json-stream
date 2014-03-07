@@ -201,10 +201,10 @@ module JSON
                   high = @stack.pop
                   error('Expected high surrogate pair half') unless high.is_a?(Fixnum)
                   pair = ((high - 0xD800) * 0x400) + (codepoint - 0xDC00) + 0x10000
-                  @buf << pair
+                  @buf << [pair].pack('C*')
                   @state = :start_string
                 else
-                  @buf << codepoint
+                  @buf << [codepoint].pack('C*')
                   @state = :start_string
                 end
               end
