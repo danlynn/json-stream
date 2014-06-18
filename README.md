@@ -78,7 +78,7 @@ network, can be processed in constant memory space this way.
 
 ## Dependencies
 
-* ruby >= 1.9.2
+* ruby >= 1.8.7
 
 ## Contact
 
